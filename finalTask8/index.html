@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Dashboard</h1>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search by title...">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="jewelery">Jewelery</option>
+                <option value="men's clothing">Men's Clothing</option>
+                <option value="women's clothing">Women's Clothing</option>
+            </select>
+            <button class="btn-sort" onclick="sortData('asc')">Price: Low to High</button>
+            <button class="btn-sort" onclick="sortData('desc')">Price: High to Low</button>
+        </div>
+
+        <div id="loader">Loading products...</div>
+        <div id="error-msg">Error loading data. Please try again.</div>
+        <div id="productGrid" class="grid"></div>
+    </div>
+
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
